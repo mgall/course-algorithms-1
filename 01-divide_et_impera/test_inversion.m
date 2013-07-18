@@ -14,7 +14,7 @@ S = (1:100)';
 c = check_algorithm(S);
 fprintf('Ordered Vector: inv count [%i]\n',c);
 
-% == CHECK ORDERED DESC ================================
+% == CHECK RANDOM VECTOR ===============================
 for i = 1:10
     S = floor(rand(100,1)*100);
     c = check_algorithm(S);
