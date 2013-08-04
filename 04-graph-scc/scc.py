@@ -44,9 +44,9 @@ def dfs(g, v=None, build_tree=False):
     for a in (v or g.v):
         if g.color[a] == 0:
             if build_tree: g.cc.append( {a} )
-            dfs_visit(g, a, build_tree)
+            dfs_visit__iterative(g, a, build_tree)
 
-def dfs_visit_(g, a, build_tree=False):
+def dfs_visit__recursive(g, a, build_tree=False):
     g.color[a] = 1
     g.time += 1
     for b in g.adjs[a]:
@@ -57,7 +57,7 @@ def dfs_visit_(g, a, build_tree=False):
     g.time += 1
     g.t_end[a] = g.time
 
-def dfs_visit(g, a, build_tree=False):
+def dfs_visit__iter(g, a, build_tree=False):
     Q = [a]
 
     while len(Q)>0:
